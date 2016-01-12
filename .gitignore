@@ -1,5 +1,6 @@
 _dispy_*
 dispynode.py
 ec2.conf
+ids.txt
 python
 venv

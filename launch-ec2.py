@@ -25,3 +25,10 @@ instances = ec2.create_instances(
 
 for index, instance in enumerate(instances):
     instance.create_tags(Tags=[{'Key':'Name', 'Value':'dispy.{}'.format(index)}])
+
+for instance in instances:
+    print(instance.id)
+
+with open('ids.txt', 'w') as ff:
+    for instance in instances:
+        ff.write('{}\n'.format(instance.id))
