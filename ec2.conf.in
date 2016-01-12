@@ -2,3 +2,5 @@ region             @region@
 access_key_id      @access_key_id@
 secret_access_key  @secret_access_key@
 ami_id             @ami_id@
+instance_type      @instance_type@
+instance_count     1

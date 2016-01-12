@@ -14,3 +14,14 @@ ec2 = boto3.resource(
     aws_access_key_id=config['access_key_id'],
     aws_secret_access_key=config['secret_access_key'],
 )
+
+instances = ec2.create_instances(
+    #DryRun=True,
+    ImageId=config['ami_id'],
+    InstanceType=config['instance_type'],
+    MinCount=int(config['instance_count']),
+    MaxCount=int(config['instance_count']),
+)
+
+for index, instance in enumerate(instances):
+    instance.create_tags(Tags=[{'Key':'Name', 'Value':'dispy.{}'.format(index)}])
