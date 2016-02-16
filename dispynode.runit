@@ -1,0 +1,5 @@
+#!/bin/sh
+# Runit startup script for dispy server node.
+ROOT=/home/alice/hello-dispy
+cd $ROOT
+exec chpst -ualice:alice ./python dispynode.py --daemon
